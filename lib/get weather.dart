@@ -86,7 +86,7 @@ class _WeatherPageState extends State<WeatherPage> {
         _Cityname = 'Temperature in: ${weatherData['name']}';
         _currweathertype = '${weatherData['weather'][0]['main']}';
         _tempInfo =
-            'Current temperature: ${(weatherData['main']['temp'] - 273.15).toStringAsFixed(2)}°C';
+        'Current temperature: ${(weatherData['main']['temp'] - 273.15).toStringAsFixed(2)}°C';
         _windInfo = 'wind speed ${weatherData['wind']['speed']} m/s';
       });
     } else {
@@ -127,75 +127,87 @@ class _WeatherPageState extends State<WeatherPage> {
         title: Text('Weather App'),
       ),
       body: Center(
-        child: ListView(
-          children: [
-            Column(
-              children: [
-                SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: TextField(
-                    controller: _cityController,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: "Enter City Name",
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/background.jpg'),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.4), // Adjust the opacity here (0.0 to 1.0)
+                BlendMode.dstATop, // BlendMode adjusts how the color is applied
+              ),
+            ),
+          ),
+          child: ListView(
+            children: [
+              Column(
+                children: [
+                  SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: TextField(
+                      controller: _cityController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: "Enter City Name",
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 10),
-                ElevatedButton(
-                    onPressed: () {
-                      String cityName;
-                      cityName = _cityController.text.trim();
-                      getCityName(cityName);
-                    },
-                    child: Text("Get Weather by City")),
-                SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: getLocationWeather,
-                  child: Text('Get Weather by Location'),
-                ),
-
-                Visibility(
-                  visible:
-                      _currweathertype != null && _currweathertype.isNotEmpty,
-                  child: Lottie.asset(
-                    _currweathertype != null && _currweathertype.isNotEmpty
-                        ? getweatherAnimation(_currweathertype)
-                        : 'assets/empty_animation.json',
-                    width: 200,
-                    height: 200,
-                    // other Lottie animation properties
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                      onPressed: () {
+                        String cityName;
+                        cityName = _cityController.text.trim();
+                        getCityName(cityName);
+                      },
+                      child: Text("Get Weather by City")),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: getLocationWeather,
+                    child: Text('Get Weather by Location'),
                   ),
-                  replacement: Text('No data'),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  _currweathertype,
-                  style: TextStyle(fontSize: 18),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  'Weather Information:',
-                  style: TextStyle(fontSize: 20),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  _Cityname,
-                  style: TextStyle(fontSize: 18),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  _tempInfo,
-                  style: TextStyle(fontSize: 18),
-                ),
-                Text(
-                  _windInfo,
-                  style: TextStyle(fontSize: 18),
-                ),
-              ],
-            ),
-          ],
+
+                  Visibility(
+                    visible:
+                        _currweathertype != null && _currweathertype.isNotEmpty,
+                    child: Lottie.asset(
+                      _currweathertype != null && _currweathertype.isNotEmpty
+                          ? getweatherAnimation(_currweathertype)
+                          : 'assets/empty_animation.json',
+                      width: 200,
+                      height: 200,
+                      // other Lottie animation properties
+                    ),
+                    replacement: Text('No data'),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    _currweathertype,
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Weather Information:',
+                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    _Cityname,
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    _tempInfo,
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  Text(
+                    _windInfo,
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
