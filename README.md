@@ -1,16 +1,9 @@
-# eatherpppp
+# Weather_app
 
-A new Flutter project to get weather information by manually typed location or by getting live location of the user.
+A new flutter application designed to retrieve real-time weather information. Users can input a location manually or leverage the app's capability to fetch their live location. The app seamlessly integrates weather APIs to provide accurate and up-to-date weather data, offering an intuitive and user-friendly experience. 
 
-## Getting Starteded
+## ScreenShots
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_20231230-163735](https://github.com/shreyansh2118/Weather_App/assets/111567940/dda1fcf0-e9f0-4b29-9781-ba5b20a6dd97)
+![Screenshot_20231230-163936_Permission controller](https://github.com/shreyansh2118/Weather_App/assets/111567940/aa96281b-9e6e-47ad-9ee2-faa8d8a53efc)
+![Screenshot_20231230-163813](https://github.com/shreyansh2118/Weather_App/assets/111567940/f177950e-0cfc-417f-b6c2-e536cf99a181)
