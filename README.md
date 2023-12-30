@@ -1,8 +1,8 @@
-# weathertask
+# eatherpppp
 
-A new Flutter project.
+A new Flutter project to get weather information by manually typed location or by getting live location of the user.
 
-## Getting Started
+## Getting Starteded
 
 This project is a starting point for a Flutter application.
 
